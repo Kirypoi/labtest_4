@@ -1,8 +1,12 @@
+sudo: required
 language: java
 jdk:
+    -openjdk10
     -openjdk11
 os:
     -linux
 dist:
-     -xenial
-    -precise
+     -trusty
+before_install:
+  - mvn clean install
+  - chmod +x mvnw
